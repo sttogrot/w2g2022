@@ -1,0 +1,44 @@
+body 
+{
+  background-color: var(--bg-accent);
+  margin: 0;
+}
+:root
+{
+  --bg:rgb(24, 26, 27); /*  #2e2e2e;   */
+  --bg-accent: #2e2e2e;
+  --text-color: #f4f4f4 ;
+  --border: 1px solid #696f71;;
+  --border-radius: 8px;
+  --speed: 500ms; 
+
+}
+
+.navbar{
+  background-color:  var(--bg);
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+a
+{
+    color: var(--text-color);
+    text-decoration: none;
+}
+.nav-menue
+{
+    margin-right: 50px;
+    list-style: none;
+    display: flex;
+    justify-content:flex-end;
+    gap: 4rem;
+    font-size:1.3rem;
+}
+.nav-logo
+{
+  display: flex;
+  justify-content: first baseline;
+  width: 150px;
+}
+
