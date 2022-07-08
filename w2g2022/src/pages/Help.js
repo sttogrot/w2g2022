@@ -1,7 +1,12 @@
 import React from 'react'
 
-export const Help = () => {
+ const Help = () => {
   return (
-    <div>Help me</div>
+    <div>
+	<h1>
+		send help XD
+	</h1>
+	</div>
   )
 }
+export default Help;

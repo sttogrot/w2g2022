@@ -6,12 +6,15 @@ const Navbar = () => {
   return (
     <>
       <Nav>
-        <NavMenu>
+        <NavMenu className="nav-menue">
           <NavLink to="/index" activeStyle>
             Startseite
           </NavLink>
           <NavLink to="/about" activeStyle>
             About
+          </NavLink>
+          <NavLink to="/help" activeStyle>
+            Help
           </NavLink>
         </NavMenu>
       </Nav>

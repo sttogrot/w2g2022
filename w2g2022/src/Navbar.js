@@ -1,5 +1,6 @@
 import React from "react";
 import BILDNAME from "../src/img/logo.png"
+
 function Navbar() {
   return (
     <nav className="navbar">
