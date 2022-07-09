@@ -6,8 +6,7 @@ export const Nav = styled.nav`
   background: #5860a8;
   height: 85px;
   display: flex;
-  justify-content:flex-end;
-  padding: 0.2rem calc((100vw - 1000px) / 20);
+  justify-content: space-between;
   z-index: 12;
 `;
 
@@ -38,20 +37,11 @@ export const Bars = styled(FaBars)`
   }
 `;
 
-export const NavMenu1 = styled.div`
+export const NavMenu = styled.div`
+  height: 85px;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  z-index: 12;
+`;
 
-height: 85px;
-display: flex;
-justify-content:flex-start;
-align-items: center;
-padding: 0.2rem calc((100vw - 1000px) / 20);
-z-index: 12;
-`;
-export const NavMenu2 = styled.div`
-height: 85px;
-display: flex;
-justify-content:flex-end;
-align-items: center;
-padding: 0.2rem calc((100vw - 1000px) / 20);
-z-index: 12;
-`;
