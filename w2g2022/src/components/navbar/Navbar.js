@@ -1,12 +1,20 @@
+import hsalogo from "./hsalogo.png";
 import React from "react";
-import { Nav, NavLink, NavMenu }
+import { Nav, NavLink, NavMenu1, NavMenu2 }
   from "./NavbarElements";
+
+
 
 const Navbar = () => {
   return (
     <>
       <Nav>
-        <NavMenu className="nav-menue">
+        <NavMenu1>
+          <NavLink to="/index" >
+          <img src={hsalogo} alt="hsalogo" height={64} />
+        </NavLink>
+        </NavMenu1>
+        <NavMenu2 className="nav-menue">
           <NavLink to="/index" activeStyle>
             Startseite
           </NavLink>
@@ -16,7 +24,10 @@ const Navbar = () => {
           <NavLink to="/help" activeStyle>
             Help
           </NavLink>
-        </NavMenu>
+          <NavLink to="/Room" activeStyle>
+            Räume
+          </NavLink>
+        </NavMenu2>
       </Nav>
     </>
   );
