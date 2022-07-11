@@ -1,13 +1,12 @@
-
+import React from "react";
 import './App.css';
 import './Navbar.css'
-import Navbar from './components/navbar/Navbar';
-import { BrowserRouter as Router, Routes, Route }
-  from 'react-router-dom';
-import Home from './pages/Startseite';
-import About from './pages/about';
-import Help from './pages/Help';
-import Room from './pages/Room';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './components/Startseite';
+import About from './components/about';
+import Help from './components/Help';
+import Room from './components/Room';
 
 function App() {
   return (
@@ -25,3 +24,4 @@ function App() {
 }
 
 export default App;
+
