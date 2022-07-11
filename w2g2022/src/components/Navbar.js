@@ -13,7 +13,7 @@ const Navbar = () => {
           <NavMenu>
             <NavLink to="/index" >
               <img src={hsalogo} alt="hsalogo" height={64} />
-              <h1 className="h1">Watch2gether der Hochschule Anhalt</h1>
+              <h1 className="h1">Watch2Gether der Hochschule Anhalt</h1>
             </NavLink>
           </NavMenu>
           <NavMenu className="nav-menue">

@@ -6,10 +6,10 @@ const Help = () => {
 			
 				<div class="home">
 				  <div class="title_text">
-					<h1>So benutzen Sie unsere Webplayer:</h1>
+					<h1 class="title">So benutzen Sie unsere Webplayer:</h1>
 				  </div>
 				  <div class="welcome_text">
-					<p>toller hilfe text</p>
+					<p class="textbox">toller hilfe text</p>
 				  </div>
 				</div>
 		)

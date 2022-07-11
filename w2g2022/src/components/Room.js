@@ -7,10 +7,10 @@ const Room = () => {
   return (
     <div class="home">
       <div class="title_text">
-        <h1>Hier könnten ihre Räume sichtbar sein</h1>
+        <h1 class="title">Hier könnten ihre Räume sichtbar sein</h1>
       </div>
       <div class="welcome_text">
-        <p>toller raum text</p>
+        <p class="textbox">toller raum text</p>
       </div>
       <div className='raumliste'>
         {error && <div>{error}</div>}
