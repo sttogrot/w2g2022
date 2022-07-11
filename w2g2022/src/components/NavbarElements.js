@@ -8,6 +8,7 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   z-index: 12;
+  font-size:1.3rem;
 `;
 
 export const NavLink = styled(Link)`
@@ -41,5 +42,7 @@ export const NavMenu = styled.div`
   justify-content:flex-start;
   align-items: center;
   z-index: 12;
+  gap: 4rem;
+  margin-right: 3rem;
 `;
 
