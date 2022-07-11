@@ -1,9 +1,7 @@
 import React from 'react';
 import "./css/Startseite.css";
-import { useFetch } from './useFetch';
 
 const Home = () => {
-	const { data: users, isPending, error } = useFetch('https://gitlab.hs-anhalt.de/barth_to/watch2gether/users/');
 	return (
 		<>
 			<body class="home">
@@ -36,11 +34,6 @@ const Home = () => {
 						<button onClick={event => window.location.href = '/Host'} className="homescreen_buttons">Einen neuen Raum erstellen</button>
 						<button onClick={event => window.location.href = '/Room'} className="homescreen_buttons">Einen vorhanden Raum beitreten</button>
 					</div>
-					<div>
-						{error && <div>{error}</div>}
-						{users && <li>users</li>}
-					</div>
-
 				</div>
 			</body>
 		</>
