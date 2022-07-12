@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./css/host.css";
-
+import { createUser } from "./Controller/UserController"
+import { createRoom } from "./Controller/RoomControler"
 const Host = () => {
+	const [inp, setInput] = useState('')
+	const handleButton = () => {		// gives button its funktion
+		//submit user
+		const user = createUser(inp)
+		user = createRoom(user)
+		console.log(inp)
+		window.location.href = '/Watchparty/'+roomname
+	}
 	return (
 		<>
 			<body class="home">
@@ -14,10 +23,10 @@ const Host = () => {
 					</div>
                     <div class="input">
                         <div class="eins">
-                        <input type="text" name="roomname" class="input_box" placeholder="Benutzernamen eingeben zb.: Floppa"></input>
+                        <input type="text" class="input_box" placeholder="Benutzernamen eingeben zb.: Floppa" value={inp} onChange={(change) => setInput(change.target.value)}></input>
 						</div>
 						<div class="zwei">
-						<button onClick={event => window.location.href = '/Watchparty'} className="host_button">Starten	</button>
+						<button onClick={event => handleButton()} className="host_button">Starten	</button>
                         </div>
                     </div>
 				</div>

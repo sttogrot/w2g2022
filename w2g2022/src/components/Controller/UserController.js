@@ -9,19 +9,19 @@ import React from 'react'
 // collection of funktions relates to the controll of a user
 const UserController = () => {
 
-    const createUser = (name) => {
-        const { id, name, roomname} = theUser;
+    const createUser = (input) => {
+        const username= input
+        const id =null
+        const roomname= null
         const url = 'https://gruppe18.toni-barth.com//users/'
-        // create user with getname 
-        theUser.name= name; // get name from form 
         //post user
         fetch(url, {
             method:'POST',
             headers:{"Content-Type": "application/json"}, // deklares intent, which data it wants
-            body: {"name": theUser.name}  
-        }).then(theUser.id=response.id, console.log(response.id))                 // should get the id and save it to theUser
-
-        return theUser // to save it and use it for other methodes
+            body: {"name": username}  
+        }).then(response => {response.json()})                 
+        .then(data => {id=data.id})
+        return {id, username, roomname} // to save it and use it for other methodes
     }
 
     const deleteUser = (theUser) => {                 // as an alternative one could change it, so this funktion would resive the id directly
@@ -30,7 +30,7 @@ const UserController = () => {
           method:'DELETE',
       })
       // set every data null
-      theUser.name= null;
+      theUser.username= null;
       theUser.id= null;
       theUser.roomname= null;
       return theUser          // implemented, can be disregarded or deletet
