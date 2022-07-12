@@ -9,7 +9,7 @@ const Help = () => {
 					<h1 class="title">So benutzen Sie unsere Webplayer:</h1>
 				</div>
 				<div class="welcome_text">
-					<p class="textbox">toller hilfe text</p>
+					<p class="textbox">toller hilfe text mit bildern dazu die mit richtig dicken pfeilen drauf hinweisen</p>
 				</div>
 			</div>
 		</body>

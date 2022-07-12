@@ -7,6 +7,8 @@ import Home from './components/Startseite';
 import About from './components/about';
 import Help from './components/Help';
 import Room from './components/Room';
+import Host from "./components/Host";
+import Watchparty from "./components/Watchparty";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/Help' element={<Help />} />
         <Route path="/Room" element={<Room/>}/>
+        <Route path="/Host" element={<Host/>}/>
+        <Route path="/Watchparty" element={<Watchparty/>}/>
       </Routes>
     </Router>
   );
