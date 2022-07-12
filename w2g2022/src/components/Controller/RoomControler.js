@@ -1,47 +1,69 @@
 /*
 
-TODO create Room ( only methode)
-TODO delete Room
-TODO join room
-TODO leave room
-TODO post videos (form and methode)
-TODO video sync
+ create Room should be done
+ delete Room should be done
+ join room should be done
+ leave room should be done
+
+TODO Userlist, how to store and display
+TODO Roomlist, same problem as before
 */
 
 import React from 'react'
 
+
+// collection of funktions related to the controll of a room
 const RoomControler = () => {
 
-    const createRoom =() => {
+    const createRoom =(theUser) => {
+        const url = 'https://gruppe18.toni-barth.com//rooms/'
         //put request, creation of room
         fetch(url, {
-            method:'´POST'               
-        }).then(
-            console.log(respons)
-        )  //take respons, its the name of new room
-        // get user and put him into room
+            method:'POST'               
+        })
+        //take respons, its the name of new room
+        .then(
+            console.log(respons),
+            theUser.roomname= respons.name
+        )  
+        // put user into room
+        fetch(url+':'+theUser.roomname+'/users', {
+        method:'PUT',
+        body: { "user": theUser.id } 
+    })
+        return theUser
     }
-    const deleteRoom = () => {
+    const deleteRoom = (name) => {
         // delete room with roomname
+        fetch('https://gruppe18.toni-barth.com//rooms/:'+name, {
+          method:'DELETE',
+      })
     }
-    const joinRoom = () => {
+    const joinRoom = (theUser, name) => {
         // get roomname and user id put them in url
-        // use url with POST 
+        fetch('https://gruppe18.toni-barth.com//rooms/:'+name+'/users', {
+            method:'PUT',
+            body: {"user": theUser.id}
+        })
+        //update theUser
+        theUser.roomname=name
+        return theUser
     }
-    const leaveRoom = () => {
+    const leaveRoom = (theUser) => {
         // delete user from room
+        fetch('https://gruppe18.toni-barth.com//rooms/:'+theUser.roomname+'/users', {
+          method:'DELETE',
+          body: {"user": theUser.id}
+      })
+        //update theUser
+        theUser.roomname=null
+        return theUser
     }
-    const postVideo = () => {
-        // dget video url from form
-        //fetch video url
-        //setvideo State to 0 min and deployed
+    const displayUserlist = (name) => {
+        fetch('https://gruppe18.toni-barth.com//rooms/:'+name+'/users', {
+            method:'GET'
+        }).then(respons.json()).then(data)
     }
-    const syncVideo = () => {
-        // get state of video and sync it ps: OOF
-    }
-  return (
-    <div></div>
-  )
 }
 
 export default RoomControler

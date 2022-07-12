@@ -6,6 +6,7 @@ TODO get user state or figure out when user closes browser or leaves site
 */
 import React from 'react'
 
+// collection of funktions relates to the controll of a user
 const UserController = () => {
 
     const createUser = (name) => {
