@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
 import "./css/host.css";
-import { createUser } from "./Controller/UserController"
+import { createUser } from "../components/Controller/UserController"
 import { createRoom } from "./Controller/RoomControler"
+import {useNavigate} from "react-router-dom"
+
 const Host = () => {
 	const [inp, setInput] = useState('')
+	const navigate = useNavigate()
+	const massage = "hallo"
+	const user ={massage}
 	const handleButton = () => {		// gives button its funktion
 		//submit user
-		const user = createUser(inp)
-		user = createRoom(user)
+		//const user = createUser(inp)
+		//user = createRoom(user)
 		console.log(inp)
-		window.location.href = '/Watchparty/'+roomname
+		navigate('/Watchparty',{state:user});
+		
 	}
 	return (
 		<>

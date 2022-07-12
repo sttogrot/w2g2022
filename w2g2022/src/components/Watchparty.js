@@ -1,7 +1,15 @@
 import React from 'react';
 import "./css/watchparty.css";
+import {useLocation} from 'react-router-dom';
 
-const Host = () => {
+const Watchparty = (state) => {
+	const location = useLocation();
+	console.log(location.state)
+	const handleButton = () => {		// gives button its funktion
+		console.log(location.state.massage)
+		
+	}
+	
 	return (
 		<>
 			<body class="home">
@@ -14,7 +22,7 @@ const Host = () => {
 					</div>
 					<div class="links">
 						<input type="text" name="roomname" class="link_box" placeholder="Link einfügen"></input>
-						<button onClick={event => window.location.href = '/Watchparty'} className="link_submit">Starten	</button>
+						<button onClick={event => handleButton()} className="link_submit">Starten	</button>
 					</div>
 					<div class="users">
 						<p>Hier aktuelle nutzer des raumes in einer zeile auflisten</p>
@@ -25,4 +33,4 @@ const Host = () => {
 	);
 };
 
-export default Host;
+export default Watchparty;
