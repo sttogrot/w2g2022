@@ -1,32 +1,40 @@
 /*
 
-TODO create user (form and methode)
-TODO delete user
-
+ create user should be done
+ delete user should be done
+TODO get user state or figure out when user closes browser or leaves site
 */
-
 import React from 'react'
 
+// collection of funktions relates to the controll of a user
 const UserController = () => {
 
-    const createUser = () => {
-        // const getlast userid or not used
-        // get name from form 
-        // create user with getname + getlastid+1 or  idnotused
+    const createUser = (name) => {
+        const { id, name, roomname} = theUser;
+        const url = 'https://gruppe18.toni-barth.com//users/'
+        // create user with getname 
+        theUser.name= name; // get name from form 
         //post user
-        return
+        fetch(url, {
+            method:'POST',
+            headers:{"Content-Type": "application/json"}, // deklares intent, which data it wants
+            body: {"name": theUser.name}  
+        }).then(theUser.id=response.id, console.log(response.id))                 // should get the id and save it to theUser
+
+        return theUser // to save it and use it for other methodes
     }
 
-    const deleteUser = () => {
-        // get user state or figure out when user closes browser or leaves site
-        // get user id
+    const deleteUser = (theUser) => {                 // as an alternative one could change it, so this funktion would resive the id directly
         // delete request
+        fetch('https://gruppe18.toni-barth.com//users/:'+theUser.id, {
+          method:'DELETE',
+      })
+      // set every data null
+      theUser.name= null;
+      theUser.id= null;
+      theUser.roomname= null;
+      return theUser          // implemented, can be disregarded or deletet
     }
-
-
-  return (
-    <div>UserController</div>
-  )
 }
 
 export default UserController

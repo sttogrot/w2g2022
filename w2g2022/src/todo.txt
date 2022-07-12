@@ -1,0 +1,12 @@
+mobile and tablett version
+video coontroller
+display lists (raum und user im raum)
+barriere freiheit lol
+zustands änderungen/ events wie schließen des Browers abfangen und handlung danach ausführen
+eine raumseite erstellen (würde reactplayer empfeheln, haben andere auch in ihrer präsentation benutzt, der andere empfohlene von toni hat sogut wie keine dokumentation für react)
+hilfeseite
+seite als GITHUB page hosten (für abgabe wichtig)
+
+touch?
+nutzernamen eingabe anfordern um raum zu joinen(wenn nutzername nicht vorher erstellt wurde)?
+other?
