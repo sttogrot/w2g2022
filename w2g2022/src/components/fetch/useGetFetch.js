@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function useGetFetch(url) {                     // gets DATA
    const [data, setData] = useState(null);
@@ -23,7 +23,6 @@ function useGetFetch(url) {                     // gets DATA
                setLoading(false);
                setError(error.massage);
            });
-
    }, [url]);
 
    return { data, loading, error };     

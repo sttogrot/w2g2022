@@ -1,9 +1,10 @@
 import React from 'react'
 import "./css/room.css";
-import  useGetFetch  from './fetch/useGetFetch';
+import useGetFetch from './fetch/useGetFetch'
+import RoomList from './RoomList';
 
 const Room = () => {
-    const { data, loading, error} = useGetFetch('https://gruppe18.toni-barth.com/rooms/');
+  const {data} = useGetFetch('https://gruppe18.toni-barth.com/rooms/')
   return (
     <body>
       <div class="home">
@@ -11,9 +12,7 @@ const Room = () => {
           <h1 class="title">Treten Sie einer vorhandenen Watchparty bei</h1>
         </div>
         <div class="roomlist">
-          {error && <div>{error}</div>}
-          {loading &&<div>loading...</div>}
-          {data && <div><li>data</li></div>}
+        <RoomList>{data}</RoomList>
         </div>
         <div class="welcome_text">
           <p class="textbox">Oder vielleicht doch eine eigene Watchparty erstellen?</p>
