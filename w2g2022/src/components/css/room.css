@@ -54,3 +54,10 @@
   font-size: 50px;
   justify-content: center;
 }
+.roomlist{
+  display: flex;
+  color: #ffffff;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+}

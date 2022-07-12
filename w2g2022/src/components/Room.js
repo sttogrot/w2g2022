@@ -11,7 +11,7 @@ const Room = () => {
           <h1 class="title">Treten Sie einer vorhandenen Watchparty bei</h1>
         </div>
         <div class="roomlist">
-
+          <p>hier soll die raumliste hin</p>
         </div>
         <div class="welcome_text">
           <p class="textbox">Oder vielleicht doch eine eigene Watchparty erstellen?</p>
