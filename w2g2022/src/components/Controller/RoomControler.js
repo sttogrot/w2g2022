@@ -13,7 +13,12 @@ import React from 'react'
 const RoomControler = () => {
 
     const createRoom =() => {
-        //put request
+        //put request, creation of room
+        fetch(url, {
+            method:'´POST'               
+        }).then(
+            console.log(respons)
+        )  //take respons, its the name of new room
         // get user and put him into room
     }
     const deleteRoom = () => {
