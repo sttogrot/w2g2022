@@ -3,8 +3,7 @@ video coontroller
 display lists (raum und user im raum)
 barriere freiheit lol
 zustands änderungen/ events wie schließen des Browers abfangen und handlung danach ausführen
-eine raumseite erstellen (würde reactplayer empfeheln, haben andere auch in ihrer präsentation benutzt, der andere empfohlene von toni hat sogut wie keine dokumentation für react)
-hilfeseite
+eine raumseite erstellen <== player wurde integriert, aber host button zum erstellen eines raumes funkt noch nicht
 seite als GITHUB page hosten (für abgabe wichtig)
 
 touch?
