@@ -30,13 +30,8 @@
   
       
   }
-  .party_text{
-    width: 100%;
-    display:flex;
-    justify-content: flex-start;
-    
-  }
-  .party_textbox{
+  
+  .party_videobox{
     display: flex;
     color: #ffffff;
     font-size: 30px;
@@ -73,4 +68,10 @@
       font-size: 30px;
       margin-left: 2%;
       font-weight: bold;
+  }
+  .player{
+    display:flex;
+    justify-content: flex-start;
+    margin-left: 7%;
+    
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import "./css/watchparty.css";
 import {useLocation} from 'react-router-dom';
+import ReactPlayer from 'react-player';
 
 const Watchparty = () => {
 	const location = useLocation();
@@ -20,8 +21,8 @@ const Watchparty = () => {
 					<div class="partytitle_text">
 						<h1 class="party_title">hier soll dan der raumname hin am besten</h1>
 					</div>
-					<div class="party_text">
-						<p class="party_textbox">hier soll das player fenster hin</p>
+					<div class="player">
+						<ReactPlayer controls url="https://www.youtube.com/watch?v=4LdA_PpeSz0" width={1280} height={720}/>
 					</div>
 					<div class="links">
 						<input type="text" name="roomname" class="link_box" placeholder="Link einfügen"></input>
