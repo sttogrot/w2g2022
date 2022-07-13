@@ -2,13 +2,16 @@ import React from 'react';
 import "./css/watchparty.css";
 import {useLocation} from 'react-router-dom';
 
-const Watchparty = (state) => {
+const Watchparty = () => {
 	const location = useLocation();
-	console.log(location.state)
+	const user = location.state.user
 	const handleButton = () => {		// gives button its funktion
-		console.log(location.state.massage)
 		
 	}
+	console.log(window.sessionStorage.getItem("key"))
+
+	
+	
 	
 	return (
 		<>

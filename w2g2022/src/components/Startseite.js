@@ -1,7 +1,19 @@
 import React from 'react';
 import "./css/Startseite.css";
+import { useNavigate} from "react-router-dom"
+
+
+
 
 const Home = () => {
+	const navigate = useNavigate()
+	const handleButton1 = () => {		// gives button its funktion
+		navigate('/Host');
+	}
+	const handleButton2 = () => {		// gives button its funktion
+		navigate('/Room');
+	}
+
 	return (
 		<>
 			<body class="home">
@@ -31,8 +43,8 @@ const Home = () => {
 						</p>
 					</div>
 					<div >
-						<button onClick={event => window.location.href = '/Host'} className="homescreen_buttons">Einen neuen Raum erstellen</button>
-						<button onClick={event => window.location.href = '/Room'} className="homescreen_buttons">Einen vorhanden Raum beitreten</button>
+						<button onClick={event => handleButton1() } className="homescreen_buttons">Einen neuen Raum erstellen</button>
+						<button onClick={event => handleButton2()} className="homescreen_buttons">Einen vorhanden Raum beitreten</button>
 					</div>
 				</div>
 			</body>

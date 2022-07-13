@@ -1,10 +1,16 @@
 import React from 'react'
 import "./css/room.css";
 import useGetFetch from './fetch/useGetFetch'
-
+import {useNavigate} from "react-router-dom"
 
 const Room = () => {
-  const {data} = useGetFetch('https://gruppe18.toni-barth.com/rooms/')
+  const navigate = useNavigate()
+  const handleButton = () => {		// gives button its funktion
+		navigate('/Host');
+	}
+
+  
+
   return (
     <body>
       <div class="home">
@@ -16,7 +22,7 @@ const Room = () => {
         </div>
         <div class="welcome_text">
           <p class="textbox">Oder vielleicht doch eine eigene Watchparty erstellen?</p>
-          <button onClick={event => window.location.href = '/Host'} className="homescreen_buttons">Einen neuen Raum erstellen</button>
+          <button onClick={event => handleButton()} className="homescreen_buttons">Einen neuen Raum erstellen</button>
         </div>
       </div>
     </body>

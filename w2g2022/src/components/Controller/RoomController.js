@@ -48,18 +48,19 @@ import React from 'react'
             body: {"user": theUser.id}
         })
         //update theUser
-        theUser.roomname=name
+        sessionStorage.removeItem('roomname');
+        window.sessionStorage.setItem("room", name)
         return theUser
     }
-    export const leaveRoom = (theUser) => {
+    export const leaveRoom = (id, roomname) => {
+        id=JSON.stringify(id)
         // delete user from room
-        fetch('https://gruppe18.toni-barth.com//rooms/:'+theUser.roomname+'/users', {
+        fetch('https://gruppe18.toni-barth.com//rooms/:'+roomname+'/users', {
           method:'DELETE',
-          body: {"user": theUser.id}
+          body: {"user": id}
       })
         //update theUser
-        theUser.roomname=null
-        return theUser
+        sessionStorage.removeItem('roomname');
     }
     export const displayUserlist = (name) => {
         fetch('https://gruppe18.toni-barth.com//rooms/:'+name+'/users', {

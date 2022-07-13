@@ -2,6 +2,7 @@ import React from 'react'
 import "./css/help.css"
 
 const Help = () => {
+	
 	return (
 		<body>
 			<div class="home">
