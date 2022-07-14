@@ -5,27 +5,28 @@
 TODO get user state or figure out when user closes browser or leaves site
 */
 
+import { useState } from "react"
+import { createRoom } from "./RoomController";
+
 // collection of funktions relates to the controll of a user
 
  export const createUser = (input) => {
-    const id =null
-    const roomname= null
-    const url = 'https://gruppe18.toni-barth.com//users/'
+    const url = 'https://gruppe18.toni-barth.com/users/'
+    window.sessionStorage.setItem("name", input);
     //post user
     fetch(url, {
         method:'POST',
-        headers:{"Content-Type": "application/json"}, // deklares intent, which data it wants
-        body:  JSON.stringify({"name": input})  
-    }).then(response => {response.json()})                 
-    .then(data => {id=data.id})
-    return {id, input, roomname} // to save it and use it for other methodes
+        headers:{"Content-Type": "application/json"},
+        body:  JSON.stringify({"name": JSON.stringify(input)})  
+    }).then((response) => { return response.json()})                 
+    .then((data) => {window.sessionStorage.setItem("id", data.id)})   
+    
+    return  sessionStorage.getItem('id')
 }
 
 export const deleteUser = (id) => {                 // as an alternative one could change it, so this funktion would resive the id directly
         // delete request
-        fetch('https://gruppe18.toni-barth.com//users/:'+ id, {
-          method:'DELETE',
+        fetch('https://gruppe18.toni-barth.com/users/'+ id, {
+          method:'DELETE', headers:{"Content-Type": "application/json"}
       })
     }
-
-
