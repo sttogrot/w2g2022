@@ -9,6 +9,7 @@ import Help from './components/Help';
 import Room from './components/Room';
 import Host from "./components/Host";
 import Watchparty from "./components/Watchparty";
+import UserCreatrSide from "./components/UserCreatrSide";
 import { deleteUser } from "./components/Controller/UserController";
 import { leaveRoom } from "./components/Controller/RoomController";
 
@@ -23,25 +24,22 @@ function App() {
     }
 })
 const handleTabClosing = () => {
-  logOut()
+  logOut(sessionStorage.getItem('id'), sessionStorage.getItem('name'))
 }
 const alertUser = (event) => {
   event.preventDefault()
   event.returnValue = ''
 }
-const logOut = ()=>{
-  if(sessionStorage.getItem('roomname')!=null)
-  {
-    leaveRoom(sessionStorage.getItem('id'), sessionStorage.getItem('roomname'))
-  }
-  deleteUser('id')
-  sessionStorage.clear();
+const logOut = (id, roomname)=>{
+  leaveRoom(roomname)
+  deleteUser(id)
+  sessionStorage.clear()
 }
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route exact path='/' element={<Home />} />
+        <Route exact path='/' element={<UserCreatrSide />} />
         <Route path='/index' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/Help' element={<Help />} />

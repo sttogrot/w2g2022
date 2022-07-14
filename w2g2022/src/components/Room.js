@@ -6,7 +6,13 @@ import {useNavigate} from "react-router-dom"
 const Room = () => {
   const navigate = useNavigate()
   const handleButton = () => {		// gives button its funktion
-		navigate('/Host');
+		if(sessionStorage.getItem('id')==null){
+      
+			navigate('/')
+		}
+		else{
+			navigate('/host')
+		}
 	}
 
   

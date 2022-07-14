@@ -7,10 +7,16 @@ import { useNavigate} from "react-router-dom"
 
 const Home = () => {
 	const navigate = useNavigate()
-	const handleButton1 = () => {		// gives button its funktion
-		navigate('/Host');
+	const handleButton1 = () => {		// gives button its funktion, create room
+		if(sessionStorage.getItem('id')==null){
+			window.sessionStorage.setItem("redirect", '/Host')
+			navigate('/')
+		}
+		else{
+			navigate('/Host')
+		}
 	}
-	const handleButton2 = () => {		// gives button its funktion
+	const handleButton2 = () => {		// gives button its funktion, join room
 		navigate('/Room');
 	}
 

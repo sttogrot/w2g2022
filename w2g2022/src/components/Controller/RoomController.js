@@ -15,57 +15,44 @@ import React from 'react'
 // collection of funktions related to the controll of a room
 
 
-    export const createRoom =(theUser) => {
-        const url = 'https://gruppe18.toni-barth.com//rooms/'
+    export const createRoom =() => {
+        const url = 'https://gruppe18.toni-barth.com/rooms/'
+
         //put request, creation of room
         fetch(url, {
-            method:'POST'               
+            method:'POST' ,
+            headers:{"Content-Type": "application/json"},             
         })
         //take respons, its the name of new room
         .then( response => {
-            response.json()})
-        .then (data => {
-            console.log(data)
-            theUser.roomname= data.name
-        })  
-        // put user into room
-        fetch(url+':'+theUser.roomname+'/users', {
-        method:'PUT',
-        body: { "user": theUser.id } 
-        })
-        return theUser
+           return response.json()})
+        .then (data => { joinRoom(data.name)
+        }) 
+        
     }
-    export const deleteRoom = (name) => {
-        // delete room with roomname
-        fetch('https://gruppe18.toni-barth.com//rooms/:'+name, {
-          method:'DELETE',
-      })
-    }
-    export const joinRoom = (theUser, name) => {
+    export const joinRoom = (name) => {
         // get roomname and user id put them in url
-        fetch('https://gruppe18.toni-barth.com//rooms/:'+name+'/users', {
+        fetch('https://gruppe18.toni-barth.com/rooms/'+ name +'/users', {
             method:'PUT',
-            body: {"user": theUser.id}
+            headers:{"Content-Type": "application/json"},
+            body:  JSON.stringify({"user": sessionStorage.getItem('id')})
         })
-        //update theUser
-        sessionStorage.removeItem('roomname');
-        window.sessionStorage.setItem("room", name)
-        return theUser
+        window.sessionStorage.setItem("roomname", name)
     }
-    export const leaveRoom = (id, roomname) => {
-        id=JSON.stringify(id)
+    export const leaveRoom = (roomname) => {
         // delete user from room
-        fetch('https://gruppe18.toni-barth.com//rooms/:'+roomname+'/users', {
+        fetch('https://gruppe18.toni-barth.com/rooms/'+roomname+'/users', {
           method:'DELETE',
-          body: {"user": id}
+          headers:{"Content-Type": "application/json"},
+          body:  JSON.stringify({"user": sessionStorage.getItem('id')})
       })
         //update theUser
         sessionStorage.removeItem('roomname');
     }
     export const displayUserlist = (name) => {
-        fetch('https://gruppe18.toni-barth.com//rooms/:'+name+'/users', {
+        fetch('https://gruppe18.toni-barth.com/rooms/'+name+'/users', {
             method:'GET'
-        }).then(  respons =>  {respons.json()}).then(data => {console.log(data)}) // TODO
+        }).then(  respons =>  {return respons.json()}).then(data => {console.log(data)}) // TODO
     }
 
 
