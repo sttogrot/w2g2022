@@ -6,12 +6,14 @@ import ReactPlayer from 'react-player';
 import { postVideo } from './Controller/VideoController';
 
 const Watchparty = () => {		// room siplay with userlist of rpp
-	const [url, setUrl] = useState()
+	const [link, setLink] = useState('')
+	const [url, setUrl] = useState('https://www.youtube.com/watch?v=Q0B5dLHDQ2w')
 	const navigate = useNavigate()
 	const unsername= sessionStorage.getItem('name')
 	const id = sessionStorage.getItem('id')
 	const roomname = sessionStorage.getItem('roomname')
 	const handleButton = () => {		// gives button its funktion leave, submit video
+		setUrl(link)
 		postVideo(url)
 		console.log(url)
 	}
@@ -37,7 +39,7 @@ const Watchparty = () => {		// room siplay with userlist of rpp
 						
 					</div>
 					<div class="links">
-						<input type="text" name="roomname" class="link_box" placeholder="Link einfügen" value={url} onChange={(change) => setUrl(change.target.value)}></input>
+						<input type="text" name="roomname" class="link_box" placeholder="Link einfügen" value={link} onChange={(change) => setLink(change.target.value)}></input>
 						<button onClick={event => handleButton()} className="link_submit">Starten	</button>
 						<button onClick={event => handleButton2()} className="link_leave">Raum Verlassen</button>
 					</div>
