@@ -17,7 +17,6 @@ const Watchparty = () => {
 		leaveRoom(sessionStorage.getItem('roomname'))
 		navigate('/Room')
 	}
-	console.log(window.sessionStorage.getItem("key"))
 
 	
 	

@@ -35,7 +35,7 @@ const UserCreatrSide = () => {
                 <input type="text" class="input_box" placeholder="Benutzernamen eingeben zb.: Floppa" value={inp} onChange={(change) => setInput(change.target.value)}></input>
                 </div>
                 <div class="zwei">
-						<button onClick={event => handleButton()} className="host_button">Starten	</button>
+						<button onClick={event => handleButton()} className="host_button">Bestätigen	</button>
                 </div>
             </div>
         </div>
