@@ -1,18 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 /**
 *    TODO post videos (form and methode)
  *   TODO video sync
  */
-const VideoController = () => {
+
   
-    const postVideo = () => {
-        // dget video url from form
-        //fetch video url
-        //setvideo State to 0 min and deployed
+export const postVideo = (url) => {
+        // get video url, fetch video 
+        console.log(url)
+        fetch('https://gruppe18.toni-barth.com/rooms/'+sessionStorage.getItem('roomname') +'/video',{
+            method:'PUT',
+            headers:{"Content-Type": "application/json"}, 
+            body:  JSON.stringify({"user": sessionStorage.getItem('id'),"url": url}),})
+            .then( (response) => {  window.sessionStorage.setItem("url", getVideo()) } )
     }
     const syncVideo = () => {
         // get state of video and sync it ps: OOF
     }
-}
 
-export default VideoController
+    export const getVideo = () => {
+        // get video url, fetch video url
+        fetch('https://gruppe18.toni-barth.com/rooms/' + sessionStorage.getItem('roomname') + '/video')
+        .then(response => {return response.json()}).then(data => { sessionStorage.setItem("url", data)})
+    }
