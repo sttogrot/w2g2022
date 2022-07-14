@@ -5,8 +5,6 @@
 TODO get user state or figure out when user closes browser or leaves site
 */
 
-import { useState } from "react"
-import { createRoom } from "./RoomController";
 
 // collection of funktions relates to the controll of a user
 

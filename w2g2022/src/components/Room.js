@@ -2,7 +2,8 @@ import React from 'react'
 import "./css/room.css";
 import useGetFetch from './fetch/useGetFetch'
 import {useNavigate} from "react-router-dom"
-import { createRoom } from './Controller/RoomController';
+import { createRoom } from "./Controller/RoomController";
+
 
 const Room = () => {
   const navigate = useNavigate()
@@ -11,7 +12,7 @@ const Room = () => {
 			navigate('/UserCreateSide')
 		}
 		else{
-			createRoom()
+      createRoom()
 			navigate('/Watchparty')
 		}
 	}
