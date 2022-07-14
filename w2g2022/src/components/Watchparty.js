@@ -5,16 +5,17 @@ import { leaveRoom } from './Controller/RoomController';
 import ReactPlayer from 'react-player';
 import { postVideo } from './Controller/VideoController';
 
-const Watchparty = () => {
+const Watchparty = () => {		// room siplay with userlist of rpp
 	const [url, setUrl] = useState()
 	const navigate = useNavigate()
 	const unsername= sessionStorage.getItem('name')
 	const id = sessionStorage.getItem('id')
 	const roomname = sessionStorage.getItem('roomname')
-	const handleButton = () => {		// gives button its funktion leave
+	const handleButton = () => {		// gives button its funktion leave, submit video
 		postVideo(url)
+		console.log(url)
 	}
-	const handleButton2 = () => {		// gives button its funktion leave
+	const handleButton2 = () => {		// gives button its funktion, leave Room
 		leaveRoom(sessionStorage.getItem('roomname'))
 		navigate('/Room')
 	}
@@ -27,10 +28,10 @@ const Watchparty = () => {
 			<body class="home">
 				<div>
 					<div class="partytitle_text">
-						<h1 class="party_title">Raum:</h1>
+						<h1 class="party_title">Raum: {roomname}</h1>
 					</div>
 					<div class="player">
-						<ReactPlayer controls url="https://www.youtube.com/watch?v=4LdA_PpeSz0" width={1280} height={720}/>
+						<ReactPlayer controls url={url} width={1280} height={720}/>
 						
 						<p class="users">Nutzer in dieser Watchparty:</p>
 						

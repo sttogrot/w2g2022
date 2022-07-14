@@ -4,8 +4,8 @@ import React, { useState } from 'react'
  *   TODO video sync
  */
 
-  
-export const postVideo = (url) => {
+  // nimmt video und übergibt es der Api, benutzt die inder session gespeicherten id, führt danach die methode get video direkt aus
+export const postVideo = (url) => { 
         // get video url, fetch video 
         console.log(url)
         fetch('https://gruppe18.toni-barth.com/rooms/'+sessionStorage.getItem('roomname') +'/video',{
@@ -17,7 +17,7 @@ export const postVideo = (url) => {
     const syncVideo = () => {
         // get state of video and sync it ps: OOF
     }
-
+    // speichert die Url, die in der api hinterlegt ist alss ein session key und returned diesen
     export const getVideo = () => {
         // get video url, fetch video url
         fetch('https://gruppe18.toni-barth.com/rooms/' + sessionStorage.getItem('roomname') + '/video')
