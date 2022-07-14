@@ -9,9 +9,9 @@ import Help from './components/Help';
 import Room from './components/Room';
 import Host from "./components/Host";
 import Watchparty from "./components/Watchparty";
-import UserCreatrSide from "./components/UserCreatrSide";
 import { deleteUser } from "./components/Controller/UserController";
 import { leaveRoom } from "./components/Controller/RoomController";
+import UserCreatrSide from "./components/UserCreateSide";
 
 
 function App() {
@@ -39,13 +39,14 @@ const logOut = (id, roomname)=>{
     <Router>
       <Navbar />
       <Routes>
-        <Route exact path='/' element={<UserCreatrSide />} />
+        <Route exact path='/' element={<Home />} />
         <Route path='/index' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/Help' element={<Help />} />
         <Route path="/Room" element={<Room/>}/>
         <Route path="/Host" element={<Host/>}/>
         <Route path="/Watchparty" element={<Watchparty/>}/>
+        <Route path="/UserCreateSide" element={<UserCreatrSide/>}/>
       </Routes>
     </Router>
   );

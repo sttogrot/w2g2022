@@ -1,6 +1,7 @@
 import React from 'react';
 import "./css/Startseite.css";
 import { useNavigate} from "react-router-dom"
+import { createRoom } from './Controller/RoomController';
 
 
 
@@ -9,11 +10,11 @@ const Home = () => {
 	const navigate = useNavigate()
 	const handleButton1 = () => {		// gives button its funktion, create room
 		if(sessionStorage.getItem('id')==null){
-			window.sessionStorage.setItem("redirect", '/Host')
-			navigate('/')
+			navigate('/UserCreateSide')
 		}
 		else{
-			navigate('/Host')
+			createRoom()
+			navigate('/Watchparty')
 		}
 	}
 	const handleButton2 = () => {		// gives button its funktion, join room
