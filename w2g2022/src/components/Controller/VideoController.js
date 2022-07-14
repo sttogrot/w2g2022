@@ -12,7 +12,7 @@ export const postVideo = (url) => {
             method:'PUT',
             headers:{"Content-Type": "application/json"}, 
             body:  JSON.stringify({"user": sessionStorage.getItem('id'),"url": url}),})
-            .then( (response) => {  window.sessionStorage.setItem("url", getVideo()) } )
+            .then( (response) => { getVideo()} )
     }
     const syncVideo = () => {
         // get state of video and sync it ps: OOF
@@ -21,5 +21,6 @@ export const postVideo = (url) => {
     export const getVideo = () => {
         // get video url, fetch video url
         fetch('https://gruppe18.toni-barth.com/rooms/' + sessionStorage.getItem('roomname') + '/video')
-        .then(response => {return response.json()}).then(data => { sessionStorage.setItem("url", data)})
+        .then(response => {return response.json()}).then(data => { sessionStorage.setItem("url", data.url)})
+        return sessionStorage.getItem('url')
     }

@@ -2,17 +2,16 @@ import React from 'react'
 import "./css/room.css";
 import useGetFetch from './fetch/useGetFetch'
 import {useNavigate} from "react-router-dom"
-import { createRoom } from './Controller/RoomController';
 
 const Room = () => {
   const navigate = useNavigate()
   const handleButton = () => {		// gives button its funktion
 		if(sessionStorage.getItem('id')==null){
-			navigate('/UserCreateSide')
+      
+			navigate('/')
 		}
 		else{
-			createRoom()
-			navigate('/Watchparty')
+			navigate('/host')
 		}
 	}
 

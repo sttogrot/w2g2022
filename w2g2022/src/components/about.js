@@ -1,8 +1,6 @@
 import React from 'react'
 import "./css/about.css"
 const About = () => {
-
-	console.log(window.sessionStorage.getItem("key"))
 	return (
 		<body>
 			<div class="home">
