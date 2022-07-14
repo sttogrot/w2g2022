@@ -28,6 +28,12 @@
   
     
   }
+  .link_leave:hover{
+    background-color: #6f79cf;
+    font-weight: bold;
+    color: #ffffff;
+    transition-duration: 300ms;
+  }
   
   .link_submit:hover {
     background-color: #6f79cf;
