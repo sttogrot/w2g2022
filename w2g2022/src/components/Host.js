@@ -33,7 +33,7 @@ const  Host = () => {
 					</div>
 				</div>
 				<div class="player">
-				<ReactPlayer controls url="https://www.youtube.com/watch?v=4LdA_PpeSz0" width={1280} height={720} name="testplayer"/>
+				
 					</div>
 			</body>
 		</>

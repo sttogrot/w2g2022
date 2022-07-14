@@ -27,21 +27,20 @@ const Watchparty = () => {
 			<body class="home">
 				<div>
 					<div class="partytitle_text">
-						<h1 class="party_title">hier soll dan der raumname hin am besten</h1>
+						<h1 class="party_title">Raum:</h1>
 					</div>
 					<div class="player">
 						<ReactPlayer controls url="https://www.youtube.com/watch?v=4LdA_PpeSz0" width={1280} height={720}/>
+						
+						<p class="users">Nutzer in dieser Watchparty:</p>
+						
 					</div>
 					<div class="links">
 						<input type="text" name="roomname" class="link_box" placeholder="Link einfügen"></input>
 						<button onClick={event => handleButton()} className="link_submit">Starten	</button>
+						<button onClick={event => handleButton2()} className="link_leave">Raum Verlassen</button>
 					</div>
-					<div>
-						<button onClick={event => handleButton2()} className="link_submit">Verlassen</button>
-					</div>
-					<div class="users">
-						<p>Hier aktuelle nutzer des raumes in einer zeile auflisten</p>
-					</div>
+					
 				</div>
 			</body>
 		</>
