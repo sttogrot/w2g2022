@@ -2,9 +2,8 @@ import React from 'react'
 import "./css/room.css";
 import useGetFetch from './fetch/useGetFetch'
 import { useNavigate } from "react-router-dom"
-import { createRoom } from "./Controller/RoomController";
+import { createRoom, joinRoom } from "./Controller/RoomController";
 import { useEffect, useState } from "react";
-import RoomList from './RoomList';
 
 
 const Room = () => {
@@ -15,6 +14,18 @@ const Room = () => {
     }
     else {
       createRoom()
+      setTimeout(function () {
+        navigate('/Watchparty')
+      }, 500)
+    }
+  }
+  const handleButton2 = (roomname) => {        // gives button its funktion
+    if (sessionStorage.getItem('id') == null) {
+        navigate('/UserCreateSide')
+
+    }
+    else {
+    joinRoom(roomname)
       setTimeout(function () {
         navigate('/Watchparty')
       }, 500)
@@ -53,7 +64,7 @@ const Room = () => {
           <p class="roomlist">
             {data.map((rooms, name) => (
               <tr key={name}>
-                <button onClick={event =>  handleButton()} className="room_button">{rooms.name}</button>
+                <button onClick={event =>  handleButton2(rooms.name)} className="room_button">{rooms.name}</button>
               </tr>
             ))}
           </p>
