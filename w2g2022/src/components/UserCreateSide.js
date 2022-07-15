@@ -6,7 +6,7 @@ import {useNavigate} from "react-router-dom"
 const UserCreatrSide = () => {
     const [inp, setInput] = useState('')
     const navigate = useNavigate()
-    const  handleButton = async () => {		// gives button its funktion
+    const  handleButton =  () => {		// gives button its funktion
 		createUser(inp)
         if(sessionStorage.getItem('redirect')!=null){
             const redirect = sessionStorage.getItem('redirect')

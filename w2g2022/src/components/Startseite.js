@@ -14,7 +14,10 @@ const Home = () => {
 		}
 		else{
 			createRoom()
-			navigate('/Watchparty')
+			setTimeout(function() {
+				navigate('/Watchparty')
+			}, 500)
+			
 		}
 	}
 	const handleButton2 = () => {		// gives button its funktion, join room
