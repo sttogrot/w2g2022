@@ -4,7 +4,7 @@ import {useNavigate} from "react-router-dom"
 import { leaveRoom } from './Controller/RoomController';
 import ReactPlayer from 'react-player';
 import { getVideo, getVideoStat, postVideo, postVideoPos, postVideoStat } from './Controller/VideoController';
-import { handlePause, handlePlay } from './Controller/PlayerController';
+
 
 const Watchparty = () => {		// room siplay with userlist of rpp
 	const firstUrl = 'https://www.youtube.com/watch?v=Q0B5dLHDQ2w'
@@ -25,14 +25,15 @@ const Watchparty = () => {		// room siplay with userlist of rpp
 
 	const  handlePlay = () => {
 		console.log('onPlay')
+		
 		postVideoStat('playing')
 	  }
 	
-	   const  handlePause = () => {
+	const  handlePause = () => {
 		console.log('onPause')
 		postVideoStat('paused')
 	  }
-	   const  handleSeekChange = (e) => {
+	const  handleSeekChange = (e) => {
 		
 		postVideoPos(parseFloat(e.target.value))
 	  }
@@ -41,7 +42,6 @@ const Watchparty = () => {		// room siplay with userlist of rpp
 	useEffect(() =>{
 		const interval = setInterval(() => {
 			sync()
-			console.log('updated')
 		  }, 3000);
 		  return () => clearInterval(interval);
 		}, []);
@@ -73,14 +73,16 @@ const Watchparty = () => {		// room siplay with userlist of rpp
 	}
 	// should get the status of the video and paus/play the video, but doesnt work
 	const compareState = () =>{
-		if(getVideoStat()=='playing')
+		const a = getVideoStat()
+		if(a=='playing')
 		{
 			setPlaying(true)
 		}
-		if(getVideo()=='paused')
+		if(a =='paused') 
 		{
 			setPlaying(false)
 		}
+		
 	}
 	// gets the video Podition of the server
 	const comparePos = () => {
@@ -98,6 +100,7 @@ const Watchparty = () => {		// room siplay with userlist of rpp
 					</div>
 					<div class="player">
 						<ReactPlayer
+					
 						 className='react-player'
 						 width={1280} 
 						 height={720}
@@ -106,8 +109,8 @@ const Watchparty = () => {		// room siplay with userlist of rpp
 						 controls={controls}
 						 onReady={() => console.log('onReady')}
 						 onStart={() => console.log('onStart')}
-						 onPlay={handlePlay()}
-						 onPause={handlePause()}
+						 onPlay={() => handlePlay()}
+						 onPause={() => handlePause()}
 						 onBuffer={() => console.log('onBuffer')}
 						 onSeek={e=> {handleSeekChange(e)}}
 						/>
