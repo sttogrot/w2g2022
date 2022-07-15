@@ -8,7 +8,7 @@ const About = () => {
 					<h1 class="title">Über unseren Webplayer</h1>
 				</div>
 				<div class="welcome_text">
-					<p class="textbox">Dieser Webplayer ist in Kooperation mit der Hochschule Anhalt unter Anleitung von Toni Barth entstanden.</p>
+					<p class="textbox">Dieser Webplayer ist in Kooperation mit der Hochschule Anhalt unter Aufsicht von Toni Barth entstanden.</p>
 				</div>
 				<div>
 					<p class="copyright">© 2022 - Diese Anwendung sowie all ihre zugehörigen Logo's und Funktionen stehen in keinster Weise mit www.w2g.tv in Verbindung und sind jediglich für Lehrzwecke zu benutzen.</p>

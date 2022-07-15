@@ -24,7 +24,7 @@ const Navbar = () => {
               Räume
             </NavLink>
             <NavLink to="/help" activeStyle>
-              Help
+              Hilfe
             </NavLink>
             <NavLink to="/about" activeStyle>
               About
