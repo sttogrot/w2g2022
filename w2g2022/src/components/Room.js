@@ -21,7 +21,6 @@ const Room = () => {
     }
   }
 
-<<<<<<< HEAD
   const [data, getData] = useState([])
   const URL = 'https://gruppe18.toni-barth.com/rooms/';
 
@@ -42,10 +41,6 @@ const Room = () => {
 
   }
 
-=======
- 
-  
->>>>>>> 4f958ba0815d5a3062a2b85414347df9ef74554e
 
   return (
     <body>
@@ -53,7 +48,6 @@ const Room = () => {
         <div class="title_text">
           <h1 class="title">Treten Sie einer vorhandenen Watchparty bei</h1>
         </div>
-<<<<<<< HEAD
         <div >
           <h3 class="h3">Vorhandene Räume</h3>
           <p class="roomlist">
@@ -66,10 +60,6 @@ const Room = () => {
         </div>
         <div>
         
-=======
-        <div class="roomlist">
-          <RoomList></RoomList>
->>>>>>> 4f958ba0815d5a3062a2b85414347df9ef74554e
         </div>
         <div class="welcome_text">
           <p class="textbox">Oder vielleicht doch eine eigene Watchparty erstellen?</p>
