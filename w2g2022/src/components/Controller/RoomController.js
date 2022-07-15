@@ -28,7 +28,7 @@ import React from 'react'
            return response.json()})
         .then (data => { joinRoom(data.name)
         }) 
-        
+        return null
     }
     export const joinRoom = (name) => {
         // get roomname and user id put them in url

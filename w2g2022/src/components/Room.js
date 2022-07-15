@@ -13,7 +13,9 @@ const Room = () => {
 		}
 		else{
       createRoom()
-			navigate('/Watchparty')
+			setTimeout(function() {
+				navigate('/Watchparty')
+			}, 500)
 		}
 	}
 
