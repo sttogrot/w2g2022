@@ -58,6 +58,34 @@
   display: flex;
   color: #ffffff;
   font-size: 30px;
+  flex-direction:row;
+  flex-wrap: wrap;
+  margin-left: 1%;
+  
+
+}
+.h3{
+  display: flex;
   justify-content: center;
+  color: #ffffff;
+  font-size: 40px;
+}
+.room_button{
+  color: #000000;
+  font-weight: bold;
+  display: flex;
   align-items: center;
+  height: 20px;
+  width: 300px;
+  padding: 1rem;
+  background-color: #d0d4ff;
+  border-style: outset;
+  border-radius: 10px;
+}
+.room_button:hover {
+  background-color: #6f79cf;
+  font-weight: bold;
+  color: #ffffff;
+  transition-duration: 300ms;
+ 
 }

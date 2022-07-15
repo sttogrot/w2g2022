@@ -14,11 +14,11 @@ const Room = () => {
     }
     else {
       createRoom()
-			setTimeout(function() {
-				navigate('/Watchparty')
-			}, 500)
-		}
-	}
+      setTimeout(function () {
+        navigate('/Watchparty')
+      }, 500)
+    }
+  }
 
   const [data, getData] = useState([])
   const URL = 'https://gruppe18.toni-barth.com/rooms/';
@@ -34,28 +34,31 @@ const Room = () => {
         res.json())
 
       .then((response) => {
-        console.log(response);
-        getData(response);
+        console.log(response.rooms);
+        getData(response.rooms);
       })
-      
+
   }
-  
+
 
   return (
     <body>
-      <div class="home">
+      <div>
         <div class="title_text">
           <h1 class="title">Treten Sie einer vorhandenen Watchparty bei</h1>
         </div>
-        <div class="roomlist">
-          <tbody>
-            <h3>Vorhandene Räume</h3>
+        <div >
+          <h3 class="h3">Vorhandene Räume</h3>
+          <p class="roomlist">
             {data.map((rooms, name) => (
               <tr key={name}>
-                <td>{rooms.name}</td>
+                <button onClick={event =>  handleButton()} className="room_button">{rooms.name}</button>
               </tr>
             ))}
-          </tbody>
+          </p>
+        </div>
+        <div>
+        
         </div>
         <div class="welcome_text">
           <p class="textbox">Oder vielleicht doch eine eigene Watchparty erstellen?</p>
